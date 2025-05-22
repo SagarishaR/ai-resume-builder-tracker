@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "109004504282",
+    "project_id": "vergonix-564dd",
+    "storage_bucket": "vergonix-564dd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109004504282:android:19c5b6374770b4b5e579e3",
+        "android_client_info": {
+          "package_name": "com.vergonix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXtDse1CihRYAMKAGH-R4bVpUcxZCmhZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

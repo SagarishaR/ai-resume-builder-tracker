@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Template</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Name and Role -->
+        <h1 contenteditable="true">Your Name</h1>
+        <h2 contenteditable="true">Role You Are Applying For</h2>
+        <p contenteditable="true">Email | Mobile | Address</p>
+
+        <!-- Summary Section -->
+        <h3>Summary</h3>
+        <hr>
+        <textarea placeholder="Briefly explain why you fit for this job..."></textarea>
+
+        <!-- Experience Section -->
+        <h3>Experience</h3>
+        <div id="experience-section">
+            <div class="experience">
+                <input type="text" placeholder="Company Name" contenteditable="true">
+                <input type="text" placeholder="Job Title" contenteditable="true">
+                <input type="text" placeholder="Location" contenteditable="true">
+                <input type="text" placeholder="Time Period" contenteditable="true">
+                <textarea placeholder="Job Description..."></textarea>
+            </div>
+        </div>
+        <button onclick="addExperience()">+ Add Experience</button>
+
+        <!-- Education Section -->
+        <h3>Education</h3>
+        <div id="education-section">
+            <div class="education">
+                <input type="text" placeholder="Institution Name" contenteditable="true">
+                <input type="text" placeholder="Degree" contenteditable="true">
+                <input type="text" placeholder="Year of Graduation" contenteditable="true">
+            </div>
+        </div>
+        <button onclick="addEducation()">+ Add Education</button>
+
+        <!-- Projects Section -->
+        <h3>Projects</h3>
+        <div id="projects-section">
+            <div class="project">
+                <input type="text" placeholder="Project Title" contenteditable="true">
+                <textarea placeholder="Project Description..."></textarea>
+            </div>
+        </div>
+        <button onclick="addProject()">+ Add Project</button>
+
+        <!-- Achievements Section -->
+        <h3>Achievements</h3>
+        <div id="achievements-section">
+            <div class="achievement">
+                <textarea placeholder="Describe your achievement..."></textarea>
+            </div>
+        </div>
+        <button onclick="addAchievement()">+ Add Achievement</button>
+    </div>
+
+    <script src="MinimalScreen.js"></script>
+</body>
+</html>
