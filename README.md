@@ -1,3 +1,4 @@
+
 # AI Resume Builder & Tracker
 
 An AI-powered Android application to help users create professional resumes, optimize them for Applicant Tracking Systems (ATS), enhance content using artificial intelligence, and track job applications effectively — all in one app.
