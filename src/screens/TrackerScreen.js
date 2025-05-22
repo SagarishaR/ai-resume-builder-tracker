@@ -23,7 +23,7 @@ const TrackerScreen = () => {
 
   useEffect(() => {
     // Initialize Geocoder with your API key (get it from https://developers.google.com/maps/documentation/geocoding/get-api-key)
-    Geocoder.init("AIzaSyBCGhl-PxNL1qFNjYPFUov1W-QyvVivBYw"); 
+    Geocoder.init(process.env.REACT_APP_GOOGLE_MAPS_API_KEY); 
   }, []);
 
   // Request permission to access location (for Android)
