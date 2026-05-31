@@ -130,7 +130,6 @@ vergo/
 │   ├── screens/
 │   ├── assets/
 │   
-├── assets/
 ├── screenshots/
 ├── App.js
 ├── package.json
