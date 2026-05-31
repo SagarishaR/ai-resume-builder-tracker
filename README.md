@@ -2,7 +2,9 @@
 
 <img src="screenshots/front_logo.png" alt="Vergo Logo" width="80"/>
 
-# Vergo
+# Vergo 
+
+### Resume Builder with ATS Analysis and Job Tracking
 
 A React Native application for resume building, ATS analysis, AI-powered resume enhancement, and job application tracking.
 
