@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="screenshots/logo.png" alt="Vergo Logo" width="80"/>
+<img src="screenshots/fron_logo.png" alt="Vergo Logo" width="80"/>
 
 # Vergo
 
