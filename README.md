@@ -57,7 +57,7 @@ The application provides multiple resume templates, PDF export functionality, AT
 ### Resume Templates & Editor
 
 <p align="center">
-  <img src="screenshots/Templates.png" width="400"/>
+  <img src="screenshots/Templates.png" width="600"/>
 </p>
 
 ### PDF Preview
