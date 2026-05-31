@@ -51,7 +51,7 @@ The application provides multiple resume templates, PDF export functionality, AT
 ### Dashboard
 
 <p align="center">
-  <img src="screenshots/main.png" width="200"/>
+  <img src="screenshots/main.png" width="300"/>
 </p>
 
 ### Resume Templates & Editor
@@ -63,7 +63,7 @@ The application provides multiple resume templates, PDF export functionality, AT
 ### PDF Preview
 
 <p align="center">
-  <img src="screenshots/resume.png" width="200"/>
+  <img src="screenshots/resume.png" width="300"/>
 </p>
 
 ### ATS Analysis & AI Enhancement
@@ -75,7 +75,7 @@ The application provides multiple resume templates, PDF export functionality, AT
 ### Job Application Tracker
 
 <p align="center">
-  <img src="screenshots/Tracker.png" width="200"/>
+  <img src="screenshots/Tracker.png" width="300"/>
 </p>
 
 ---
