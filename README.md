@@ -128,10 +128,8 @@ View job application locations directly on an interactive Google Map.
 vergo/
 ├── src/
 │   ├── screens/
-│   ├── components/
-│   ├── navigation/
-│   ├── services/
-│   └── utils/
+│   ├── assets/
+│   
 ├── assets/
 ├── screenshots/
 ├── App.js
