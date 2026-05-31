@@ -45,7 +45,7 @@ The application provides multiple resume templates, PDF export functionality, AT
 ### Authentication
 
 <p align="center">
-  <img src="screenshots/signup.png" width="400"/>
+  <img src="screenshots/Signup.png" width="400"/>
 </p>
 
 ### Dashboard
@@ -57,13 +57,13 @@ The application provides multiple resume templates, PDF export functionality, AT
 ### Resume Templates & Editor
 
 <p align="center">
-  <img src="screenshots/templates.png" width="400"/>
+  <img src="screenshots/Templates.png" width="400"/>
 </p>
 
 ### PDF Preview
 
 <p align="center">
-  <img src="screenshots/pdf.png" width="400"/>
+  <img src="screenshots/resume.png" width="400"/>
 </p>
 
 ### ATS Analysis & AI Enhancement
@@ -75,7 +75,7 @@ The application provides multiple resume templates, PDF export functionality, AT
 ### Job Application Tracker
 
 <p align="center">
-  <img src="screenshots/tracker.png" width="400"/>
+  <img src="screenshots/Tracker.png" width="400"/>
 </p>
 
 ---
