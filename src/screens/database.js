@@ -5,23 +5,22 @@ SQLite.enablePromise(true);
 
 let db = null;
 
-// ✅ Initialize SQLite Database
 export const initDatabase = async () => {
   try {
     db = await SQLite.openDatabase({
       name: 'user_db.db',
       location: 'default',
     });
-    console.log('✅ SQLite Database opened successfully');
+    console.log(' SQLite Database opened successfully');
     await createUserTable();
     return db;
   } catch (error) {
-    console.error('❌ Database initialization error:', error);
+    console.error(' Database initialization error:', error);
     return null;
   }
 };
 
-// ✅ Create users table
+
 export const createUserTable = async () => {
   if (!db) db = await initDatabase();
   try {
@@ -34,19 +33,19 @@ export const createUserTable = async () => {
           password TEXT
         );`
       );
-      console.log('✅ User table created successfully');
+      console.log(' User table created successfully');
     });
   } catch (error) {
-    console.error('❌ Error creating user table:', error);
+    console.error(' Error creating user table:', error);
   }
 };
 
-// ✅ Register user in SQLite only
+
 export const registerUser = async (username, email, password) => {
   if (!db) db = await initDatabase();
 
   try {
-    // Check for existing username/email
+   
     const exists = await new Promise((resolve, reject) => {
       db.transaction((tx) => {
         tx.executeSql(
@@ -72,12 +71,12 @@ export const registerUser = async (username, email, password) => {
 
     return { success: true, message: 'User registered successfully', username };
   } catch (error) {
-    console.error('❌ Error registering user:', error);
+    console.error('Error registering user:', error);
     return { success: false, message: 'Registration failed. Try again!' };
   }
 };
 
-// ✅ Authenticate user
+
 export const authenticateUser = async (email, password) => {
   if (!db) db = await initDatabase();
 
@@ -106,7 +105,7 @@ export const authenticateUser = async (email, password) => {
       return { success: false, message: 'Incorrect password' };
     }
   } catch (error) {
-    console.error('❌ Error during login:', error);
+    console.error('Error during login:', error);
     return { success: false, message: 'Login failed. Try again!' };
   }
 };
