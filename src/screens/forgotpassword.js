@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from "react-native";
 
-// Mock function to simulate email reset handling (you can replace it with actual API call)
+
 const sendResetLink = async (email) => {
   try {
-    const response = await fetch("http://10.0.2.2:5001/reset-password", {  // Update this to your actual backend endpoint
+    const response = await fetch("http://10.0.2.2:5001/reset-password", {  
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -37,7 +37,7 @@ const ForgotPassword = ({ navigation }) => {
 
     if (isSuccess) {
       Alert.alert("Success", "Password reset link sent to your email!");
-      navigation.navigate("Login"); // Navigate to login page after successful reset email sent
+      navigation.navigate("Login"); 
     } else {
       Alert.alert("Error", "Something went wrong. Please try again.");
     }
