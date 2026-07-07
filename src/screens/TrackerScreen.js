@@ -3,16 +3,16 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity, FlatList, Alert } 
 import MapView, { Marker } from 'react-native-maps';
 import { PermissionsAndroid } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
-import Geocoder from 'react-native-geocoding'; // for reverse geocoding
+import Geocoder from 'react-native-geocoding'; 
 
 const TrackerScreen = () => {
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
-  const [status, setStatus] = useState("Applied"); // default status
+  const [status, setStatus] = useState("Applied"); 
   const [notes, setNotes] = useState("");
-  const [date, setDate] = useState(""); // string input for date
-  const [location, setLocation] = useState(null); // store selected location
-  const [address, setAddress] = useState(""); // store address
+  const [date, setDate] = useState(""); 
+  const [location, setLocation] = useState(null); 
+  const [address, setAddress] = useState(""); 
   const [jobs, setJobs] = useState([]);
   const [region, setRegion] = useState({
     latitude: 37.78825, 
@@ -22,11 +22,11 @@ const TrackerScreen = () => {
   });
 
   useEffect(() => {
-    // Initialize Geocoder with your API key (get it from https://developers.google.com/maps/documentation/geocoding/get-api-key)
+    
     Geocoder.init(process.env.REACT_APP_GOOGLE_MAPS_API_KEY); 
   }, []);
 
-  // Request permission to access location (for Android)
+  
   const requestLocationPermission = async () => {
     try {
       const granted = await PermissionsAndroid.request(
@@ -49,7 +49,7 @@ const TrackerScreen = () => {
     }
   };
 
-  // Get current location (if needed)
+  
   const getCurrentLocation = () => {
     Geolocation.getCurrentPosition(
       (position) => {
@@ -69,19 +69,19 @@ const TrackerScreen = () => {
     );
   };
 
-  // Handle location update after drag
+
   const handleMarkerDragEnd = async (e) => {
     const { latitude, longitude } = e.nativeEvent.coordinate;
-    console.log("Dragged Location:", latitude, longitude);  // Debugging
+    console.log("Dragged Location:", latitude, longitude);  
     setLocation({ latitude, longitude });
     
-    // Reverse geocoding to get address from lat/long
+  
     Geocoder.from(latitude, longitude)
       .then(json => {
-        console.log("Geocoder Response:", json); // Debugging the full response
+        console.log("Geocoder Response:", json); /
         const addressComponent = json.results[0]?.formatted_address;
         if (addressComponent) {
-          console.log("Address: ", addressComponent);  // Debugging
+          console.log("Address: ", addressComponent);  
           setAddress(addressComponent);
         } else {
           Alert.alert("No Address Found", "We couldn't retrieve an address for this location.");
@@ -95,7 +95,7 @@ const TrackerScreen = () => {
       });
   };
 
-  // Add new job application
+  
   const handleAddJob = () => {
     console.log("Job Title:", jobTitle);
     console.log("Company:", company);
@@ -113,7 +113,7 @@ const TrackerScreen = () => {
       status,
       notes,
       date: date || "Not specified",
-      location: address, // Store the address
+      location: address, 
     };
 
     setJobs([newJob, ...jobs]);
@@ -122,23 +122,23 @@ const TrackerScreen = () => {
     setStatus("Applied");
     setNotes("");
     setDate("");
-    setLocation(null); // Clear location after adding
-    setAddress(""); // Clear address after adding
+    setLocation(null);
+    setAddress(""); 
   };
 
-  // Handle map press to set location
+  
   const handleMapPress = (e) => {
     const { latitude, longitude } = e.nativeEvent.coordinate;
-    console.log("Selected Location:", latitude, longitude);  // Debugging
+    console.log("Selected Location:", latitude, longitude);  
     setLocation({ latitude, longitude });
 
-    // Reverse geocoding to get address from lat/long
+    
     Geocoder.from(latitude, longitude)
       .then(json => {
-        console.log("Geocoder Response:", json); // Debugging the full response
+        console.log("Geocoder Response:", json); 
         const addressComponent = json.results[0]?.formatted_address;
         if (addressComponent) {
-          console.log("Address: ", addressComponent);  // Debugging
+          console.log("Address: ", addressComponent); 
           setAddress(addressComponent);
         } else {
           Alert.alert("No Address Found", "We couldn't retrieve an address for this location.");
@@ -177,7 +177,6 @@ const TrackerScreen = () => {
         onChangeText={setDate}
       />
 
-      {/* Status TextInput (instead of Picker) */}
       <TextInput
         style={styles.input}
         placeholder="Enter Status (e.g., Applied, Interview, Offer)"
@@ -193,7 +192,7 @@ const TrackerScreen = () => {
         multiline
       />
 
-      {/* Map Component for Location Selection */}
+     
       <View style={styles.mapContainer}>
         <MapView
           style={styles.map}
