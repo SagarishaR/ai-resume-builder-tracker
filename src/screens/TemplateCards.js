@@ -8,7 +8,7 @@ const templates = [
     title: "Modern Templates",
     description: "Choose from a variety of stylish and professional resume templates.",
     image: require("../assets/sample.jpeg"),
-    navigateTo: "ResumeSlides", // Specify where to navigate
+    navigateTo: "ResumeSlides", 
   },
   {
     id: 2,
