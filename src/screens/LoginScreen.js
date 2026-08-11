@@ -58,7 +58,7 @@ const LoginScreen = ({ navigation }) => {
       if (response.success) {
         setEmail('');
         setPassword('');
-        Alert.alert('Success', `Yo ${response.user.username}, you’re finna slay! 🔥`);
+        Alert.alert('Success', `Yo ${response.user.username}, you’re finna slay! `);
         navigation.navigate('Main', { username: response.user.username });
       } else {
         Alert.alert('Error', 'Email or password ain’t it. Try again, lowkey.');
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   },
   passwordInput: {
     flex: 1,
-    marginBottom: 0, // Remove bottom margin to align with eye button
+    marginBottom: 0, 
   },
   eyeButton: {
     padding: 10,
