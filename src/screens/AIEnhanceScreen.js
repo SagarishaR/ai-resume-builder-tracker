@@ -10,7 +10,7 @@ const AIEnhanceScreen = ({ route }) => {
   const [enhancedResume, setEnhancedResume] = useState("");
   const [loading, setLoading] = useState(true);
 
-  // Call AI API to enhance resume
+ 
   useEffect(() => {
     const fetchEnhancedResume = async () => {
       try {
@@ -25,7 +25,7 @@ const AIEnhanceScreen = ({ route }) => {
     fetchEnhancedResume();
   }, []);
 
-  // HTML content for WebView
+ 
   const resumeHTML = `
     <html>
       <head>
@@ -51,7 +51,7 @@ const AIEnhanceScreen = ({ route }) => {
     </html>
   `;
 
-  // Generate & Download PDF
+  
   const generatePDF = async () => {
     try {
       const options = {
