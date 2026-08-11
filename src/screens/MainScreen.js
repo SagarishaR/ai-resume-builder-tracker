@@ -11,7 +11,7 @@ import ProfileScreen from './ProfileScreen';
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = ({ navigation, route }) => {
-  // Ensure username is passed correctly from route params
+  
   const username = route?.params?.username || "Guest";
   return (
     <SafeAreaView style={styles.container}>
@@ -35,7 +35,7 @@ const HomeScreen = ({ navigation, route }) => {
 };
 
 const MainScreen = ({ route }) => {
-  // Pass the username from the parent route to the Tab Navigator
+  
   const username = route?.params?.username || "Guest";
 
   return (
@@ -68,7 +68,7 @@ const MainScreen = ({ route }) => {
       <Tab.Screen 
         name="Home" 
         component={HomeScreen} 
-        initialParams={{ username }} // Pass username to HomeScreen
+        initialParams={{ username }} 
       />
       <Tab.Screen 
         name="Templates" 
