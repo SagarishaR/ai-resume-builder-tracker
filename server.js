@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 const upload = multer({ dest: "uploads/" });
 
-// ✅ Email setup using environment variables
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// ✅ Function to send welcome email
+
 function sendWelcomeEmail(toEmail, userName) {
   const mailOptions = {
     from: process.env.EMAIL_USER,
@@ -35,38 +35,36 @@ function sendWelcomeEmail(toEmail, userName) {
     if (error) {
       console.error('Email error:', error);
     } else {
-      console.log('✅ Welcome email sent:', info.response);
+      console.log(' Welcome email sent:', info.response);
     }
   });
 }
 
-// ✅ /signup endpoint to trigger email
+
 app.post("/signup", async (req, res) => {
   const { email, name } = req.body;
 
   try {
-    // Normally you would save the user to a database here.
-
-    // Send welcome email
+    
     sendWelcomeEmail(email, name);
 
     res.status(200).json({ message: "Signup successful. Welcome email sent." });
   } catch (err) {
-    console.error("❌ Signup error:", err);
+    console.error(" Signup error:", err);
     res.status(500).json({ error: "Signup failed" });
   }
 });
 
-// ✅ Check for Groq API key
+
 const API_KEY = process.env.GROQ_API_KEY;
 if (!API_KEY) {
-  console.error("❌ Error: API Key is missing! Check your .env file.");
+  console.error(" Error: API Key is missing! Check your .env file.");
   process.exit(1);
 } else {
-  console.log("✅ API Key Loaded Successfully.");
+  console.log(" API Key Loaded Successfully.");
 }
 
-// ✅ /enhance-resume endpoint
+
 app.post("/enhance-resume", async (req, res) => {
   const resumeData = req.body.resume;
   const prompt = `
@@ -100,18 +98,18 @@ app.post("/enhance-resume", async (req, res) => {
     try {
       enhancedResume = JSON.parse(enhancedText);
     } catch (parseError) {
-      console.error("❌ Failed to parse Groq response as JSON:", parseError);
+      console.error(" Failed to parse Groq response as JSON:", parseError);
       enhancedResume = { error: "Enhanced resume not in JSON format", raw: enhancedText };
     }
 
     res.json({ resume: enhancedResume });
   } catch (error) {
-    console.error("❌ Error enhancing resume:", error);
+    console.error(" Error enhancing resume:", error);
     res.status(500).json({ error: "Failed to enhance resume", details: error.message });
   }
 });
 
-// ✅ /extract-pdf-text endpoint
+
 app.post("/extract-pdf-text", upload.single("pdf"), async (req, res) => {
   try {
     if (!req.file) {
@@ -123,15 +121,15 @@ app.post("/extract-pdf-text", upload.single("pdf"), async (req, res) => {
     const data = await pdfParse(pdfBuffer);
     const text = data.text;
 
-    await fs.unlink(pdfPath); // Clean up
+    await fs.unlink(pdfPath); 
     res.json({ text });
   } catch (error) {
-    console.error("❌ Error extracting PDF text:", error);
+    console.error(" Error extracting PDF text:", error);
     res.status(500).json({ error: "Failed to extract PDF text", details: error.message });
   }
 });
 
-// ✅ Start server
+
 const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
